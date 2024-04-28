@@ -149,6 +149,8 @@ def enrich_span_with_input(span, input):
 
 def enrich_span_with_trace_type(span, inputs, output, trace_type):
     SpanEnricherManager.enrich(span, inputs, output, trace_type)
+    # TODO: Move the following logic to SpanEnricher
+    enrich_span_with_openai_tokens(span, trace_type)
     return trace_iterator_if_needed(span, inputs, output)
 
 

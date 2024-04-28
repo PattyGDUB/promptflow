@@ -8,6 +8,10 @@ class SpanEnricher:
         pass
 
     def enrich(self, span, inputs, output):
+        """This method is used to enrich the span with the inputs and output of the traced function.
+        Note that this method is called after the function is called, so some inputs related logic is not here.
+        """
+        #  TODO: Also move input related logic here.
         from ._trace import enrich_span_with_output
 
         enrich_span_with_output(span, output)
