@@ -5,11 +5,12 @@
 from pathlib import Path
 
 from promptflow.client import load_flow
+from promptflow.core import AzureOpenAIModelConfiguration
 from promptflow.core._prompty_utils import convert_model_configuration_to_connection
 
 
 class CoherenceEvaluator:
-    def __init__(self, model_config):
+    def __init__(self, model_config: AzureOpenAIModelConfiguration):
         """
         Initialize an evaluator configured for a specific Azure OpenAI model.
 
